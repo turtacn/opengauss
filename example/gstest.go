@@ -9,7 +9,7 @@ import (
 func main() {
 
 	gsCfg := postgres.Config{
-		DSN:                  "host=localhost user=gaussdb password=Enmo@123 dbname=gaussdb port=15432 sslmode=disable TimeZone=Asia/Shanghai",
+		DSN:                  "host=localhost user=gaussdb password=Enmo@123 dbname=postgres port=15432 sslmode=disable TimeZone=Asia/Shanghai",
 		PreferSimpleProtocol: true,
 	}
 
