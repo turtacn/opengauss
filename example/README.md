@@ -9,5 +9,6 @@ docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -p 1543
 
 ## 测试代码
 ```shell script
+go mod tidy
 go run gstest.go
 ```
