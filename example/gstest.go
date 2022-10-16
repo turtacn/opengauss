@@ -15,14 +15,20 @@ func main() {
 
 	gsDialector := postgres.New(gsCfg)
 
-	gsdb, err := gorm.Open(gsDialector, &gorm.Config{})
+	postgresDB, err := gorm.Open(gsDialector, &gorm.Config{})
 	if err != nil {
-		fmt.Println("Failed to connect opengauss db %v", err)
+		fmt.Println("Failed to connect postgresDB db %v", err)
 		return
 	}
 
-	if gsdb != nil {
-		fmt.Println("DB struct is %v", gsdb)
+	if postgresDB == nil {
+		fmt.Println("DB instance is null")
+		return
+	}
+
+	if testDB := postgresDB.Exec("CREATE DATABASE testdb"); testDB.Error != nil {
+		fmt.Println("create databse test01db failed, error=%v", testDB.Error)
+		return
 	}
 
 }
