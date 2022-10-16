@@ -2,7 +2,6 @@
 
 ## 准备环境
 
-### 启一个opengauss db实例
 ```shell script
 # 起实例
 docker run --name opengauss --privileged=true -d -e GS_PASSWORD=Enmo@123 -p 15432:5432 enmotech/opengauss:3.0.0 
@@ -23,3 +22,7 @@ go mod tidy
 go run gstest.go
 
 ```
+
+## 其他测试
+
+- 基于sqlmock 进行gorm单元测试
